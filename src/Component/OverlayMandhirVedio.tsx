@@ -5,10 +5,15 @@ const OverlayMandhirVedio = ({
   overlayMandhirRef,
   overlayMandhirVedioPlay,
   handleMandhirVedio,
+  handleOverlayMandhirEnd,
 }: any) => {
   return (
     <div className={Style.Vedio}>
-      <video ref={overlayMandhirRef} onCanPlay={overlayMandhirVedioPlay} loop>
+      <video
+        ref={overlayMandhirRef}
+        onCanPlay={overlayMandhirVedioPlay}
+        onEnded={handleOverlayMandhirEnd}
+      >
         <source src="https://dvf7opio6knc7.cloudfront.net/satyugvideos/Construction.mp4" />
       </video>
       <div className={Style.button}>

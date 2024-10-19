@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Style from "./login.module.scss";
 
-const Login = ({ handleLoginVedioPlay, LoginRef }: any) => {
+const Login = ({ handleLoginVedioPlay, LoginRef, handleBack }: any) => {
   const [data, setData] = useState({
     name: "",
     number: "",
@@ -105,6 +105,9 @@ const Login = ({ handleLoginVedioPlay, LoginRef }: any) => {
               <source src="https://dvf7opio6knc7.cloudfront.net/satyugvideos/BahumulyaWEBM.webm" />
             </video>
           </div>
+        </div>
+        <div className={Style.back} onClick={handleBack}>
+          <h2>Back</h2>
         </div>
       </div>
     </div>

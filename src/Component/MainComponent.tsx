@@ -58,9 +58,14 @@ const MainComponent = () => {
     }
   };
 
+  const handleVedioEnd = () => {
+    setOverlayMandhir(true);
+    setVediio(false);
+  };
+
   const handleOverlayVedio = () => {
     setOverlayMandhir(true);
-    setVediio(hide);
+    setVediio(false);
   };
 
   const handleOverlayMandhirData = () => {
@@ -74,6 +79,11 @@ const MainComponent = () => {
     }
   };
 
+  const handleOverlayMandhirEnd = () => {
+    setVediio1(false);
+    setVediio2(true);
+  };
+
   const handleMandhirVedio = () => {
     setVediio1(false);
     setVediio2(true);
@@ -85,6 +95,11 @@ const MainComponent = () => {
     }
   };
 
+  const handleThirdVedioEnd = () => {
+    setVediio2(false);
+    setForm(true);
+  };
+
   const handleThirdVedio = () => {
     setVediio2(false);
     setForm(true);
@@ -93,6 +108,11 @@ const MainComponent = () => {
     if (LoginRef.current) {
       LoginRef.current.play();
     }
+  };
+
+  const handleBack = () => {
+    setHide(true);
+    setForm(false);
   };
   return (
     <>
@@ -104,6 +124,7 @@ const MainComponent = () => {
           vedioRef={vedioRef}
           handleVedioPlay={handleVedioPlay}
           handleOverlayVedio={handleOverlayVedio}
+          handleVedioEnd={handleVedioEnd}
         />
       )}
       {overlayMandhir && (
@@ -114,6 +135,7 @@ const MainComponent = () => {
           overlayMandhirRef={overlayMandhirRef}
           overlayMandhirVedioPlay={overlayMandhirVedioPlay}
           handleMandhirVedio={handleMandhirVedio}
+          handleOverlayMandhirEnd={handleOverlayMandhirEnd}
         />
       )}
       {video2 && (
@@ -121,12 +143,14 @@ const MainComponent = () => {
           thirdVedioRef={thirdVedioRef}
           handleThirdVedioPlay={handleThirdVedioPlay}
           handleThirdVedio={handleThirdVedio}
+          handleThirdVedioEnd={handleThirdVedioEnd}
         />
       )}
       {form && (
         <Login
           handleLoginVedioPlay={handleLoginVedioPlay}
           LoginRef={LoginRef}
+          handleBack={handleBack}
         />
       )}
       {hide && (
