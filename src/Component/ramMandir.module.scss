@@ -1,0 +1,110 @@
+.Header {
+  display: block;
+  background-image: url("https://www.digitalrammandir.com/wp-content/uploads/2024/01/section1-1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 60px;
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 1100px;
+    margin: auto;
+
+    .Image {
+      display: block;
+      height: 500px;
+      width: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+    .text {
+      display: block;
+      text-align: center;
+      h2 {
+        font-size: 70px;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+        text-shadow: 0.03em 0.07em 0.15em rgba(0, 0, 0, 0.97);
+      }
+      p {
+        font-size: 24px;
+        color: #ffd08b;
+        margin: 0;
+        padding: 10px 0px;
+        font-style: italic;
+        text-shadow: 0.03em 0.07em 0.15em rgba(0, 0, 0, 0.97);
+      }
+      .button {
+        display: inline-block;
+        margin-top: 20px;
+        button {
+          background: url("https://www.digitalrammandir.com/wp-content/uploads/2023/12/btn-bg.png");
+          height: 70px;
+          background-position: 100%;
+          background-size: cover;
+          border: none;
+          max-width: 275px;
+          min-width: 275px;
+          font-style: italic;
+          color: #fff;
+          font-size: 24px;
+          text-shadow: 0.03em 0.07em 0.15em rgba(0, 0, 0, 0.97);
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) and (min-width: 360px) {
+  .Header {
+    display: block;
+    background-position: 71%;
+    .wrapper {
+      width: 100%;
+      .Image {
+        height: 200px;
+        width: 50%;
+        margin-right: auto;
+        img {
+          transform: translate(-15%, 0%);
+          height: 100%;
+        }
+      }
+      .text {
+        padding: 0px 15px;
+        h2 {
+          font-size: 36px;
+        }
+        p {
+          text-align: justify;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 992px) and (min-width: 769px) {
+  .Header {
+    display: block;
+    background-position: 50%;
+    .wrapper {
+      width: 100%;
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 993px) {
+  .Header {
+    display: block;
+    background-position: 100%;
+    .wrapper {
+      width: 100%;
+    }
+  }
+}

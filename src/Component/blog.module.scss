@@ -1,0 +1,127 @@
+.Blog {
+  display: flex;
+  padding: 70px 0px;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 80px;
+  .Image {
+    width: 47%;
+    height: 400px;
+    position: relative;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .bottomText {
+      position: absolute;
+      bottom: 0;
+      height: 100px;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 0px 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      h2 {
+        font-size: 33px;
+        color: #fff;
+        font-style: italic;
+        margin: 0;
+        padding: 0;
+        line-height: 45px;
+        cursor: pointer;
+      }
+    }
+  }
+  .text {
+    width: 47%;
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      h2 {
+        font-size: 45px;
+        color: #ffd08b;
+        font-weight: 500;
+        font-style: italic;
+        margin: 0;
+        padding: 0;
+        text-shadow: 0.03em 0.07em 0.15em rgba(0, 0, 0, 0.97);
+        margin-block-start: 0;
+        margin-block-end: 0;
+        cursor: pointer;
+      }
+      button {
+        background: none;
+        color: #ffd08b;
+        font-size: 18px;
+        border: solid 2px #ffd08b;
+        padding: 10px 25px;
+        border-radius: 25px;
+      }
+    }
+    .FullDetail {
+      display: block;
+      margin-top: 20px;
+      .content {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 0;
+        span {
+          width: 35%;
+          display: block;
+          img {
+            width: 100%;
+          }
+        }
+        .mainbox {
+          width: 85%;
+          p {
+            font-size: 18px;
+            color: #fff;
+            font-weight: 500;
+            margin: 0;
+            padding: 0;
+            font-style: italic;
+            line-height: 27px;
+            width: 90%;
+          }
+          h2 {
+            font-size: 18px;
+            color: #ffd08b;
+            font-weight: 500;
+            margin: 0;
+            padding: 10px 0px;
+            font-style: italic;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) and (min-width: 360px) {
+  .Blog {
+    display: block;
+    padding: 50px 0px;
+    .Image {
+      width: 100%;
+      .bottomText {
+        height: auto;
+      }
+    }
+    .text {
+      width: 100%;
+      .header {
+        margin-top: 30px;
+        h2 {
+          font-size: 30px;
+        }
+      }
+      .FullDetail {
+        margin-top: 30px;
+      }
+    }
+  }
+}

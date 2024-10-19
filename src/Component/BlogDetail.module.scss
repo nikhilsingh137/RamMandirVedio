@@ -1,0 +1,120 @@
+.Header {
+  background: #1e0a06;
+  padding-bottom: 50px;
+  h2 {
+    text-align: center;
+    color: #ffd08b;
+    font-weight: 500;
+    margin: 0;
+    padding: 10px 0px;
+    font-style: italic;
+    font-size: 45px;
+  }
+  .blogSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1100px;
+    margin: auto;
+    flex-wrap: wrap;
+    .Detail {
+      width: 31%;
+      border: solid 1px #ffd08b;
+      border-radius: 10px;
+      margin-top: 50px;
+      span {
+        display: block;
+        width: 100%;
+        img {
+          width: 100%;
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+        }
+      }
+      .data {
+        padding: 20px 20px;
+        padding-bottom: 80px;
+        h2 {
+          font-size: 22px;
+          color: #ffd08b;
+          font-weight: 500;
+          margin: 0;
+          padding: 10px 0px;
+          font-style: italic;
+        }
+
+        h3 {
+          font-size: 18px;
+          color: #ffd08b;
+          font-weight: 500;
+          margin: 0;
+          padding: 10px 0px;
+          font-style: italic;
+        }
+        p {
+          font-size: 17px;
+          color: #fff;
+          font-weight: 500;
+          margin: 0;
+          padding: 10px 0px;
+          font-style: italic;
+          line-height: 28px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) and (min-width: 360px) {
+  .Header {
+    display: block;
+    padding: 50px 15px;
+    .blogSection {
+      width: 100%;
+      .Detail {
+        width: 100%;
+        .data {
+          h2 {
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 992px) and (min-width: 769px) {
+  .Header {
+    display: block;
+    padding: 50px 15px;
+    .blogSection {
+      width: 100%;
+      .Detail {
+        width: 48%;
+        .data {
+          h2 {
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 993px) {
+  .Header {
+    display: block;
+    padding: 50px 15px;
+    .blogSection {
+      width: 100%;
+      .Detail {
+        width: 31%;
+        .data {
+          h2 {
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+}
