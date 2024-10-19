@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/RamMandirVedio/static/css/main.7bc073f2.css",
+    "main.js": "/RamMandirVedio/static/js/main.9c0d4f37.js",
+    "index.html": "/RamMandirVedio/index.html",
+    "main.7bc073f2.css.map": "/RamMandirVedio/static/css/main.7bc073f2.css.map",
+    "main.9c0d4f37.js.map": "/RamMandirVedio/static/js/main.9c0d4f37.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7bc073f2.css",
+    "static/js/main.9c0d4f37.js"
+  ]
+}
