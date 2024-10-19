@@ -8,7 +8,7 @@ const ShriRamVedio = ({
 }: any) => {
   return (
     <div className={Style.Vedio}>
-      <video ref={vedioRef} onCanPlay={handleVedioPlay}>
+      <video ref={vedioRef} onCanPlay={handleVedioPlay} loop>
         <source src="https://dvf7opio6knc7.cloudfront.net/satyugvideos/before-game-720.mp4" />
       </video>
       <div className={Style.button} onClick={handleOverlayVedio}>

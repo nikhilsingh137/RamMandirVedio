@@ -8,7 +8,7 @@ const OverlayMandhirVedio = ({
 }: any) => {
   return (
     <div className={Style.Vedio}>
-      <video ref={overlayMandhirRef} onCanPlay={overlayMandhirVedioPlay}>
+      <video ref={overlayMandhirRef} onCanPlay={overlayMandhirVedioPlay} loop>
         <source src="https://dvf7opio6knc7.cloudfront.net/satyugvideos/Construction.mp4" />
       </video>
       <div className={Style.button}>

@@ -8,7 +8,7 @@ const ThirdVedio = ({
 }: any) => {
   return (
     <div className={Style.ThirdVedio}>
-      <video ref={thirdVedioRef} onCanPlay={handleThirdVedioPlay}>
+      <video ref={thirdVedioRef} onCanPlay={handleThirdVedioPlay} loop>
         <source src="https://dvf7opio6knc7.cloudfront.net/video_v2/Mandir_Darshan.mp4" />
       </video>
       <div className={Style.button} onClick={handleThirdVedio}>
