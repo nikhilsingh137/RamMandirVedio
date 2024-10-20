@@ -113,12 +113,14 @@
   .overlay {
     display: block;
     padding: 0px 15px;
+    overflow-y: hidden;
     .wrapper {
       width: 100%;
       padding: 0;
       display: flex;
       justify-content: center;
       align-items: center;
+
       .image {
         &::after {
           width: 15rem;
