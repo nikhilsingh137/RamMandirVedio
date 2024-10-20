@@ -115,7 +115,10 @@
     padding: 0px 15px;
     .wrapper {
       width: 100%;
-      padding: 38px 0px;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       .image {
         &::after {
           width: 15rem;
