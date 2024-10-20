@@ -23,3 +23,15 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  html,
+  body {
+    overflow: hidden; /* Prevent body scroll on mobile */
+    height: 100vh; /* Ensure full height for body */
+  }
+
+  .Vedio {
+    overflow: hidden; /* Also ensure no overflow in video container */
+  }
+}

@@ -11,14 +11,46 @@
   }
   .button {
     position: absolute;
+    background: url("../img/btn-bg-2.svg");
+    background-position: 100%;
+    background-size: cover;
+    height: 50px;
+    background-position: 100%;
+    background-size: cover;
+    border: none;
+    max-width: 210px;
+    min-width: 210px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-shadow: 0.03em 0.07em 0.15em rgba(0, 0, 0, 0.97);
+    transition: 0.6s;
     bottom: 50px;
     right: 50px;
     z-index: 99;
     cursor: pointer;
+    transform: scale(1.05);
+    overflow: hidden;
+    &.zoom {
+      animation: zoomAnimation 1s infinite;
+    }
     h2 {
       text-transform: capitalize;
-      color: yellow;
-      font-size: 17px;
+      color: #fff;
+      font-size: 15px;
+      text-align: center;
+      font-style: italic;
     }
+  }
+}
+
+@keyframes zoomAnimation {
+  0%,
+  100% {
+    transform: scale(0.5);
+  }
+  50% {
+    transform: scale(1);
   }
 }

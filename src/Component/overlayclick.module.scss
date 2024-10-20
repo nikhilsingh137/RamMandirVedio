@@ -90,7 +90,7 @@
         display: block;
         text-align: center;
         button {
-          background: url("https://dvf7opio6knc7.cloudfront.net/satyugImages/btn-bg.png");
+          background: url("../img/btn-bg-2.svg");
           height: 55px;
           background-position: 100%;
           background-size: cover;
@@ -103,6 +103,9 @@
           font-size: 24px;
           text-shadow: 0.03em 0.07em 0.15em rgba(0, 0, 0, 0.97);
           transition: 0.6s;
+          &:hover {
+            background-image: url("https://dvf7opio6knc7.cloudfront.net/satyugImages/btn-bg.png");
+          }
         }
       }
     }

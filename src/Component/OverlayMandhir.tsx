@@ -4,6 +4,7 @@ import Style from "./overlayMandir.module.scss";
 const OverlayMandhir = ({ handleOverlayMandhirData }: any) => {
   return (
     <div className={Style.overlay}>
+      <div className={Style.border}></div>
       <div className={Style.wrapper}>
         <div className={Style.image}>
           <span className={Style.firstImg}>

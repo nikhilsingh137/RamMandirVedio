@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import Style from "./login.module.scss";
+import RainImg from "../img/drop-removebg-preview1.png";
+import VolumeImg from "../img/volume-up.png";
+import VolumeMute from "../img/mute.png";
 
 const Login = ({ handleLoginVedioPlay, LoginRef, handleBack }: any) => {
   const [data, setData] = useState({
@@ -17,7 +20,6 @@ const Login = ({ handleLoginVedioPlay, LoginRef, handleBack }: any) => {
     const newData = { ...data, [e.target.id.toLowerCase()]: e.target.value };
     setData(newData);
 
-    // Clear error message when user types
     if (e.target.id === "Name") setError({ ...error, error: "" });
     if (e.target.id === "Number") setError({ ...error, error1: "" });
     if (e.target.id === "Email") setError({ ...error, error2: "" });
@@ -44,6 +46,34 @@ const Login = ({ handleLoginVedioPlay, LoginRef, handleBack }: any) => {
       console.log("Form submitted", data);
     }
   };
+
+  const NUM_DROPS = 60;
+
+  const RainDrops = () => {
+    return (
+      <>
+        {Array.from({ length: NUM_DROPS }).map((_, index) => (
+          <img
+            key={index}
+            src={RainImg}
+            alt="Rain Drop"
+            className={Style.drop}
+            style={{
+              animationDelay: `${Math.random() * 3}s`,
+              left: `${Math.random() * 100}%`,
+            }}
+          />
+        ))}
+      </>
+    );
+  };
+  const [isMuted, setIsMuted] = useState(false);
+  const toggleMute = () => {
+    setIsMuted((prev) => !prev);
+    if (LoginRef.current) {
+      LoginRef.current.muted = !isMuted; // Toggle video mute state
+    }
+  };
   return (
     <div className={Style.Login}>
       <div className={Style.wrapper}>
@@ -55,6 +85,9 @@ const Login = ({ handleLoginVedioPlay, LoginRef, handleBack }: any) => {
                 alt=""
               />
             </span>
+            <div className={Style.Image}>
+              <RainDrops />
+            </div>
             <div className={Style.formBox}>
               <form onSubmit={handleSubmit}>
                 <div className={Style.formbar}>
@@ -101,13 +134,16 @@ const Login = ({ handleLoginVedioPlay, LoginRef, handleBack }: any) => {
             </div>
           </div>
           <div className={Style.right}>
-            <video ref={LoginRef} onCanPlay={handleLoginVedioPlay}>
+            <video ref={LoginRef} onCanPlay={handleLoginVedioPlay} loop>
               <source src="https://dvf7opio6knc7.cloudfront.net/satyugvideos/BahumulyaWEBM.webm" />
             </video>
           </div>
         </div>
         <div className={Style.back} onClick={handleBack}>
           <h2>Back</h2>
+        </div>
+        <div className={Style.volume} onClick={toggleMute}>
+          <img src={isMuted ? VolumeMute : VolumeImg} alt="" />
         </div>
       </div>
     </div>

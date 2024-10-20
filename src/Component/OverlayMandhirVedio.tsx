@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Style from "./overlaymandhirvedio.module.scss";
 
 const OverlayMandhirVedio = ({
@@ -7,6 +7,19 @@ const OverlayMandhirVedio = ({
   handleMandhirVedio,
   handleOverlayMandhirEnd,
 }: any) => {
+  const [isZooming, setIsZooming] = useState(true);
+  const handleTouchOrClick = () => {
+    setIsZooming(false);
+  };
+
+  const handleMouseEnter = () => {
+    setIsZooming(false);
+  };
+
+  const handleMouseLeave = () => {
+    setIsZooming(true);
+  };
+
   return (
     <div className={Style.Vedio}>
       <video
@@ -16,8 +29,14 @@ const OverlayMandhirVedio = ({
       >
         <source src="https://dvf7opio6knc7.cloudfront.net/satyugvideos/Construction.mp4" />
       </video>
-      <div className={Style.button}>
-        <h2 onClick={handleMandhirVedio}>Skip</h2>
+      <div
+        className={`${Style.button} ${isZooming ? Style.zoom : ""}`}
+        onTouchStart={handleTouchOrClick}
+        onClick={handleTouchOrClick}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        <h2 onClick={handleMandhirVedio}>Continue To Activity</h2>
       </div>
     </div>
   );
