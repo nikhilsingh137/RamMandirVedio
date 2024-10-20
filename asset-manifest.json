@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/RamMandirVedio/static/css/main.2010472d.css",
+    "main.css": "/RamMandirVedio/static/css/main.97891dcd.css",
     "main.js": "/RamMandirVedio/static/js/main.55c87149.js",
     "index.html": "/RamMandirVedio/index.html",
-    "main.2010472d.css.map": "/RamMandirVedio/static/css/main.2010472d.css.map",
+    "main.97891dcd.css.map": "/RamMandirVedio/static/css/main.97891dcd.css.map",
     "main.55c87149.js.map": "/RamMandirVedio/static/js/main.55c87149.js.map"
   },
   "entrypoints": [
-    "static/css/main.2010472d.css",
+    "static/css/main.97891dcd.css",
     "static/js/main.55c87149.js"
   ]
 }
