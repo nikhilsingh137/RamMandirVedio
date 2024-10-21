@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Style from "./shriram.module.scss";
 
 const ShriRamVedio = ({
@@ -7,6 +7,17 @@ const ShriRamVedio = ({
   handleOverlayVedio,
   handleVedioEnd,
 }: any) => {
+  useEffect(() => {
+    const updateHeight = () => {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
+    };
+
+    updateHeight();
+    window.addEventListener("resize", updateHeight);
+
+    return () => window.removeEventListener("resize", updateHeight);
+  }, []);
   return (
     <div className={Style.Vedio}>
       <video
