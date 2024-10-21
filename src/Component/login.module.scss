@@ -115,18 +115,81 @@
             }
           }
           button {
-            background: none;
-            color: #000;
-            text-align: center;
-            display: block;
+            display: flex;
             cursor: pointer;
-            width: 200px;
+            max-width: 100%;
+            min-width: 100%;
             border: none;
-            font-size: 16px;
-            background: rgba(257, 257, 257, 0.6);
-            margin: 40px auto;
-            padding: 15px;
+            position: relative;
+            justify-content: space-between;
+            background: none;
+            margin-top: 40px;
             border-radius: 5px;
+            align-items: center;
+            span {
+              font-size: 16px;
+              color: #ffd08b;
+              max-width: 80%;
+              min-width: 80%;
+              padding: 13px 0px;
+              display: block;
+              position: relative;
+              background: url("https://dvf7opio6knc7.cloudfront.net/satyugImages/secondary-btn.png");
+              background-repeat: no-repeat;
+              background-size: cover;
+              transition: 2s;
+              &:hover ~ .firstImg {
+                transform: translateX(-10px);
+              }
+              &:hover ~ .SecondImg {
+                transform: translateX(10px);
+              }
+              &:hover {
+                background-image: linear-gradient(
+                  90deg,
+                  rgba(0, 0, 0, 0.094),
+                  #ffd08b66,
+                  #ffd08b66,
+                  rgba(0, 0, 0, 0.137)
+                );
+              }
+              &::after {
+                position: absolute;
+                top: 0;
+                content: "";
+                height: 0.5px;
+                width: 100%;
+                background: #fff;
+                left: 0px;
+              }
+              &::before {
+                position: absolute;
+                bottom: 0;
+                content: "";
+                height: 0.5px;
+                width: 100%;
+                background: #fff;
+                left: 0px;
+              }
+            }
+            .firstImg {
+              position: absolute;
+              left: 0;
+              transition: 0.8s;
+            }
+            .SecondImg {
+              position: absolute;
+              right: 0;
+              transition: 0.8s;
+            }
+          }
+          p {
+            color: #ffd08b;
+            font-size: 12px;
+            font-weight: 500;
+            margin: 0;
+            padding: 15px 0px;
+            text-align: center;
           }
         }
       }

@@ -141,7 +141,21 @@ const Login = ({ handleLoginVedioPlay, LoginRef, handleBack }: any) => {
                     <span className={Style.error}>{error.error2}</span>
                   </div>
                 </div>
-                <button>Submit</button>
+                <button>
+                  <span>Submit</span>
+                  <img
+                    className={Style.firstImg}
+                    src="https://dvf7opio6knc7.cloudfront.net/satyugImages/left-arrow.png"
+                    alt=""
+                  />
+
+                  <img
+                    className={Style.SecondImg}
+                    src="https://dvf7opio6knc7.cloudfront.net/satyugImages/right-arrow.png"
+                    alt=""
+                  />
+                </button>
+                <p>*We are GDPR compliant and your data is safe.</p>
               </form>
             </div>
           </div>

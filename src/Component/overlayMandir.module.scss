@@ -168,10 +168,8 @@
     display: block;
     padding: 0px 15px;
     .border {
+      left: 7px;
       width: calc(100% - 0.8rem);
-      height: calc(100vh - 4rem);
-      left: 6px;
-      top: 33px;
     }
     .wrapper {
       width: 100%;
