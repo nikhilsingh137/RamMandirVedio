@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Style from "./overlaymandhirvedio.module.scss";
 
 const OverlayMandhirVedio = ({
@@ -19,6 +19,18 @@ const OverlayMandhirVedio = ({
   const handleMouseLeave = () => {
     setIsZooming(true);
   };
+
+  useEffect(() => {
+    const updateHeight = () => {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
+    };
+    updateHeight();
+    window.addEventListener("resize", updateHeight);
+    return () => {
+      window.removeEventListener("resize", updateHeight);
+    };
+  }, []);
 
   return (
     <div className={Style.Vedio}>

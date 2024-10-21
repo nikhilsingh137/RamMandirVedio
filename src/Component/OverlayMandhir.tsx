@@ -1,7 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Style from "./overlayMandir.module.scss";
 
 const OverlayMandhir = ({ handleOverlayMandhirData }: any) => {
+  useEffect(() => {
+    const updateHeight = () => {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
+    };
+    updateHeight();
+    window.addEventListener("resize", updateHeight);
+    return () => {
+      window.removeEventListener("resize", updateHeight);
+    };
+  }, []);
   return (
     <div className={Style.overlay}>
       <div className={Style.border}></div>

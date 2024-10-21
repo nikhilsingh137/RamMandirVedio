@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Style from "./login.module.scss";
 import RainImg from "../img/drop-removebg-preview1.png";
 import VolumeImg from "../img/volume-up.png";
@@ -71,9 +71,21 @@ const Login = ({ handleLoginVedioPlay, LoginRef, handleBack }: any) => {
   const toggleMute = () => {
     setIsMuted((prev) => !prev);
     if (LoginRef.current) {
-      LoginRef.current.muted = !isMuted; // Toggle video mute state
+      LoginRef.current.muted = !isMuted;
     }
   };
+
+  useEffect(() => {
+    const updateHeight = () => {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
+    };
+    updateHeight();
+    window.addEventListener("resize", updateHeight);
+    return () => {
+      window.removeEventListener("resize", updateHeight);
+    };
+  }, []);
   return (
     <div className={Style.Login}>
       <div className={Style.wrapper}>

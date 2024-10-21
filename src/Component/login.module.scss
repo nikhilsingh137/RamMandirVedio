@@ -33,7 +33,7 @@
     .divide {
       display: flex;
       justify-content: space-between;
-      height: calc(100vh);
+      height: calc(var(--vh, 1vh) * 100%);
       .left {
         width: 45%;
         display: block;
