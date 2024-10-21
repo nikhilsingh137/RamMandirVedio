@@ -12,12 +12,17 @@ import OverlayMandhir from "./OverlayMandhir";
 import OverlayMandhirVedio from "./OverlayMandhirVedio";
 import ThirdVedio from "./ThirdVedio";
 import Login from "./Login";
+import OverlayDarshan from "./OverlayDarshan";
+import DrashanVedio from "./DrashanVedio";
+import OverlayDeepotsav from "./OverlayDeepotsav";
+import DeepotsavVideo from "./DeepotsavVideo";
 
 const MainComponent = () => {
   const vedioRef: any = useRef(null);
   const overlayMandhirRef: any = useRef(null);
   const LoginRef: any = useRef(null);
   const thirdVedioRef: any = useRef(null);
+  const DeepotsavVideoRef: any = useRef(null);
   const [show, setShow] = useState(false);
   const [show1, setShow1] = useState(false);
   const [hide, setHide] = useState(true);
@@ -27,6 +32,10 @@ const MainComponent = () => {
   const [video2, setVediio2] = useState(false);
   const [footer, setFooter] = useState(true);
   const [overlayMandhir, setOverlayMandhir] = useState(false);
+  const [darshan, setDarshan] = useState(false);
+  const [darshanVedio, setDarshanVedio] = useState(false);
+  const [overlayDeepotsav, setOverlayDeepotsav] = useState(false);
+  const [overlayDeepotsavVedio, setOverlayDeepotsavVideo] = useState(false);
   const [form, setForm] = useState(false);
   const handleBlog = () => {
     setShow(true);
@@ -97,13 +106,45 @@ const MainComponent = () => {
 
   const handleThirdVedioEnd = () => {
     setVediio2(false);
-    setForm(true);
+    setDarshan(true);
   };
 
   const handleThirdVedio = () => {
     setVediio2(false);
+    setDarshan(true);
+  };
+
+  const handleOverlayDarshan = () => {
+    setDarshan(false);
+    setDarshanVedio(true);
+  };
+
+  const handleDarshanVedioEnd = () => {
+    setTimeout(() => {
+      setDarshanVedio(false);
+      setOverlayDeepotsav(true);
+    }, 40000);
+  };
+
+  const handleDeepotsavVideo = () => {
+    setOverlayDeepotsavVideo(true);
+    setOverlayDeepotsav(false);
+  };
+
+  const handleDeepotsavVideoPlay = () => {
+    if (DeepotsavVideoRef.current) {
+      DeepotsavVideoRef.current.play();
+    }
+  };
+  const handleDeepotsavVedioEnd = () => {
+    setOverlayDeepotsavVideo(false);
     setForm(true);
   };
+  const handleDeepotsavVideoSkip = () => {
+    setOverlayDeepotsavVideo(false);
+    setForm(true);
+  };
+
   const handleLoginVedioPlay = () => {
     if (LoginRef.current) {
       LoginRef.current.play();
@@ -144,6 +185,25 @@ const MainComponent = () => {
           handleThirdVedioPlay={handleThirdVedioPlay}
           handleThirdVedio={handleThirdVedio}
           handleThirdVedioEnd={handleThirdVedioEnd}
+        />
+      )}
+      {darshan && (
+        <OverlayDarshan handleOverlayDarshan={handleOverlayDarshan} />
+      )}
+      <DrashanVedio
+        vedio={darshanVedio}
+        setVedio={setDarshanVedio}
+        handleDarshanVedioEnd={handleDarshanVedioEnd}
+      />
+      {overlayDeepotsav && (
+        <OverlayDeepotsav handleDeepotsavVideo={handleDeepotsavVideo} />
+      )}
+      {overlayDeepotsavVedio && (
+        <DeepotsavVideo
+          DeepotsavVideoRef={DeepotsavVideoRef}
+          handleDeepotsavVideoSkip={handleDeepotsavVideoSkip}
+          handleDeepotsavVideoPlay={handleDeepotsavVideoPlay}
+          handleDeepotsavVedioEnd={handleDeepotsavVedioEnd}
         />
       )}
       {form && (
