@@ -38,7 +38,6 @@ const OverlayMandhirVedio = ({
         ref={overlayMandhirRef}
         onCanPlay={overlayMandhirVedioPlay}
         onEnded={handleOverlayMandhirEnd}
-        controls
       >
         <source src="https://dvf7opio6knc7.cloudfront.net/satyugvideos/Construction.mp4" />
       </video>
