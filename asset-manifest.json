@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/RamMandirVedio/static/css/main.aeab1130.css",
+    "main.css": "/RamMandirVedio/static/css/main.b0b42571.css",
     "main.js": "/RamMandirVedio/static/js/main.e373bad8.js",
     "static/media/btn-bg-2.svg": "/RamMandirVedio/static/media/btn-bg-2.a5f807bf364d2bea22f6.svg",
     "static/media/drop-removebg-preview1.png": "/RamMandirVedio/static/media/drop-removebg-preview1.f79e313c61509ee49179.png",
     "static/media/volume-up.png": "/RamMandirVedio/static/media/volume-up.c3bfb2dade46adae383a.png",
     "index.html": "/RamMandirVedio/index.html",
-    "main.aeab1130.css.map": "/RamMandirVedio/static/css/main.aeab1130.css.map",
+    "main.b0b42571.css.map": "/RamMandirVedio/static/css/main.b0b42571.css.map",
     "main.e373bad8.js.map": "/RamMandirVedio/static/js/main.e373bad8.js.map"
   },
   "entrypoints": [
-    "static/css/main.aeab1130.css",
+    "static/css/main.b0b42571.css",
     "static/js/main.e373bad8.js"
   ]
 }
