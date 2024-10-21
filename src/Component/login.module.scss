@@ -178,7 +178,6 @@
     .wrapper {
       .divide {
         width: 100%;
-        display: block;
         .left {
           width: 100%;
           padding: 0px 10px;
@@ -200,7 +199,7 @@
           width: 100%;
           position: static;
           video {
-            object-fit: cover;
+            object-fit: contain;
           }
         }
       }
