@@ -10,13 +10,17 @@ import DarshanDetail from "./DarshanDetail";
 export interface IType {
   vedio?: any;
   setVedio?: any;
-  handleDarshanVedioEnd: any;
+  handleDarshanVedioSkip: any;
+  buttonShow: any;
+  setButtonShow: any;
 }
 
 const DrashanVedio: React.FC<IType> = ({
   vedio,
   setVedio,
-  handleDarshanVedioEnd,
+  handleDarshanVedioSkip,
+  buttonShow,
+  setButtonShow,
 }) => {
   const vedioRef: any = useRef(null);
   const [showButton, setShowButton] = useState(false);
@@ -44,7 +48,6 @@ const DrashanVedio: React.FC<IType> = ({
       const vh = window.innerHeight * 0.01;
       document.documentElement.style.setProperty("--vh", `${vh}px`);
     };
-
     updateHeight();
     window.addEventListener("resize", updateHeight);
 
@@ -66,7 +69,7 @@ const DrashanVedio: React.FC<IType> = ({
       if (currentTime >= 35 && !showButton) {
         console.log("13 seconds reached, showing button.");
         setShowButton(true);
-        setAnimatedImage(true);
+        setButtonShow(true);
       }
     }
   };
@@ -87,6 +90,10 @@ const DrashanVedio: React.FC<IType> = ({
     };
   }, []);
 
+  const handleDarshanVedioEnd = () => {
+    setAnimatedImage(true);
+  };
+
   const handlePusp = () => {
     setPuspData(true);
     setAnimatedImage(false);
@@ -105,8 +112,14 @@ const DrashanVedio: React.FC<IType> = ({
     setAartiData(true);
     setAnimatedImage(false);
   };
+
   return (
     <>
+      {buttonShow && (
+        <div className={Style.button} onClick={handleDarshanVedioSkip}>
+          Skip
+        </div>
+      )}
       <div className={Style.DrashanVedio}>
         {vedio && (
           <div className={Style.vedio}>

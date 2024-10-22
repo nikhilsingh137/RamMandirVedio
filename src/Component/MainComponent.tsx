@@ -34,6 +34,7 @@ const MainComponent = () => {
   const [overlayMandhir, setOverlayMandhir] = useState(false);
   const [darshan, setDarshan] = useState(false);
   const [darshanVedio, setDarshanVedio] = useState(false);
+  const [buttonShow, setButtonShow] = useState(false);
   const [overlayDeepotsav, setOverlayDeepotsav] = useState(false);
   const [overlayDeepotsavVedio, setOverlayDeepotsavVideo] = useState(false);
   const [form, setForm] = useState(false);
@@ -119,11 +120,10 @@ const MainComponent = () => {
     setDarshanVedio(true);
   };
 
-  const handleDarshanVedioEnd = () => {
-    setTimeout(() => {
-      setDarshanVedio(false);
-      setOverlayDeepotsav(true);
-    }, 40000);
+  const handleDarshanVedioSkip = () => {
+    setDarshanVedio(false);
+    setOverlayDeepotsav(true);
+    setButtonShow(false);
   };
 
   const handleDeepotsavVideo = () => {
@@ -193,7 +193,9 @@ const MainComponent = () => {
       <DrashanVedio
         vedio={darshanVedio}
         setVedio={setDarshanVedio}
-        handleDarshanVedioEnd={handleDarshanVedioEnd}
+        handleDarshanVedioSkip={handleDarshanVedioSkip}
+        buttonShow={buttonShow}
+        setButtonShow={setButtonShow}
       />
       {overlayDeepotsav && (
         <OverlayDeepotsav handleDeepotsavVideo={handleDeepotsavVideo} />

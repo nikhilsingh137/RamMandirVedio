@@ -12,6 +12,7 @@
       object-fit: cover;
     }
   }
+
   .Content {
     bottom: 20px;
     flex-direction: column;
@@ -91,6 +92,27 @@
     to {
       transform: rotate(360deg);
     }
+  }
+}
+
+.button {
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+  font-size: 20px;
+  color: #ffd08b;
+  z-index: 9999;
+  cursor: pointer;
+  animation: zooming 2s infinite;
+}
+
+@keyframes zooming {
+  0%,
+  100% {
+    transform: scale(0.7);
+  }
+  50% {
+    transform: scale(1.05);
   }
 }
 
